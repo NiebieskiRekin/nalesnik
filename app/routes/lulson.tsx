@@ -1,11 +1,11 @@
-import { FixedGallery } from "../components/FixedGallery";
+import { FixedGallery, type imgData } from "../components/FixedGallery";
 
-const imageData = [
-  { id: 5, src: "5.jpg", x: 12, y: 30, rot: -10 },
-  { id: 6, src: "6.jpg", x: 85, y: 50, rot: 2 },
-  { id: 7, src: "7.jpg", x: 65, y: 85, rot: -7 },
-  { id: 9, src: "9.jpg", x: 15, y: 90, rot: -90 },
-{ id: 8, src: "8.jpg", x: 45, y: 65, rot: 12 },
+const imageData: imgData[] = [
+  { id: 5, src: "5.jpg", desktop: { x: 20, y: 40, rot: -10, scale: 1}, mobile: { x: 25, y: 40, rot: -10, scale: 1}},
+  { id: 6, src: "6.jpg", desktop: {x: 85, y: 45, rot: 2, scale: 1 }, mobile: {x: 80, y: 45, rot: 2, scale: 1}},
+  { id: 7, src: "7.jpg", desktop: {x: 70, y: 85, rot: -7, scale: 1 }, mobile: {x: 80, y: 99, rot: -7, scale: 1.5 }},
+  { id: 9, src: "9.jpg", desktop: {x: 15, y: 90, rot: -90, scale: 1}, mobile: {x: 15, y: 90, rot: -90, scale: 1 }},
+  { id: 8, src: "8.jpg", desktop: { x: 47, y: 67, rot: 12, scale: 1 }, mobile: {x: 47, y: 67, rot: 12, scale: 1} },
 ];
 
 export default function Lulson() {

@@ -1,6 +1,17 @@
-import React from 'react';
+export type imgSize = {x: number, y: number, rot: number, scale: number};
+export type imgData = {id: number, src: string, desktop: imgSize, mobile: imgSize}
 
-export function FixedGallery({imageData}: {imageData: {id: number, src: string, x: number, y: number, rot: number}[]}) {
+import { useEffect, useState } from "react";
+
+export function FixedGallery({imageData}: {imageData: imgData[]}) {
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+    setIsDesktop(mediaQuery.matches);
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
   return (
     <div className="absolute inset-0 z-0 pointer-events-none w-full h-[90vh]">
       {imageData.map((item) => (
@@ -10,9 +21,10 @@ export function FixedGallery({imageData}: {imageData: {id: number, src: string, 
           alt="gallery"
           className="absolute w-[20%] min-w-[150px] max-w-[300px] shadow-lg border-4 border-white"
           style={{
-            left: `${item.x}%`,
-            top: `${item.y}%`,
-            transform: `translate(-50%, -50%) rotate(${item.rot}deg)`,
+            left: `${isDesktop ? item.desktop.x : item.mobile.x}%`,
+            top: `${isDesktop ? item.desktop.y : item.mobile.y}%`,
+            transform: `translate(-50%, -50%) rotate(${isDesktop ? item.desktop.rot : item.mobile.rot}deg)`,
+            scale: isDesktop ? item.desktop.scale : item.mobile.scale
           }}
         />
       ))}
