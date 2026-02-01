@@ -2,7 +2,7 @@ import { FixedGallery } from "../components/FixedGallery";
 import { NavLink } from "react-router";
 
 const imageData = [
-  { id: 1, src: "gili.gif", x: 50, y: 50, rot: 0 },
+  { id: 1, src: "gili.gif", x: 50, y: 65, rot: 0 },
 ];
 
 export default function No() {

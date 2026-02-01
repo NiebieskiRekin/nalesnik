@@ -3,10 +3,10 @@ import { FixedGallery } from "../components/FixedGallery";
 import { Link, NavLink } from "react-router";
 
 const imageData = [
-  { id: 1, src: "1.jpg", x: 18, y: 30, rot: -10 },
-  { id: 4, src: "4.jpg", x: 70, y: 72, rot: 2 },
+  { id: 1, src: "1.jpg", x: 13, y: 32, rot: -10 },
+  { id: 2, src: "2.jpg", x: 30, y: 75, rot: 12 },
+  { id: 4, src: "4.jpg", x: 70, y: 78, rot: 2 },
   { id: 3, src: "3.jpg", x: 75, y: 20, rot: 15 },
-  { id: 2, src: "2.jpg", x: 37, y: 75, rot: 12 },
 ];
 
 export function meta({}: Route.MetaArgs) {

@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { FixedGallery } from "../components/FixedGallery";
 
 const imageData = [
-  { id: 10, src: "hapi.gif", x: 50, y: 60, rot: 0 },
+  { id: 10, src: "hapi.gif", x: 50, y: 65, rot: 0 },
 ];
 
 export default function Yes() {
