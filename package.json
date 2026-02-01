@@ -2,7 +2,7 @@
   "name": "pancake",
   "private": true,
   "type": "module",
-  "homepage": "http://niebieskirekin.github.io/nalesnik",
+  "homepage": "https://niebieskirekin.github.io/nalesnik",
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
